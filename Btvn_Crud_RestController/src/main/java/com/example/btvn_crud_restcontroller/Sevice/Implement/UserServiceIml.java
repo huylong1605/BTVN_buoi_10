@@ -22,8 +22,8 @@ public class UserServiceIml implements UserService {
     @Override
     public User addUser(User user) {
          User user1 = new User();
-         user1.setUser_name(user.getUser_name());
-         user1.setUser_age((user.getUser_age()));
+         user1.setUserName(user.getUserName());
+         user1.setUserAge((user.getUserAge()));
          userRepository.save(user1);
         return user;
     }
@@ -31,7 +31,7 @@ public class UserServiceIml implements UserService {
     @Override
     public List<UserRequest> getList() {
       List<User> users = userRepository.findAll();
-        return users.stream().map(user -> new UserRequest(user.getUser_name(), user.getUser_age())).collect(Collectors.toList());
+        return users.stream().map(user -> new UserRequest(user.getUserName(), user.getUserAge())).collect(Collectors.toList());
     }
 
     @Override
@@ -43,8 +43,8 @@ public class UserServiceIml implements UserService {
     @Override
     public User updateUser(int id, UserRequest userDAO) {
         User user = userRepository.findById(id).orElseThrow();
-         user.setUser_name(userDAO.getUserName());
-         user.setUser_age(userDAO.getAge());
+         user.setUserName(userDAO.getUserRequest());
+         user.setUserAge(userDAO.getAge());
         return userRepository.save(user);
     }
 
