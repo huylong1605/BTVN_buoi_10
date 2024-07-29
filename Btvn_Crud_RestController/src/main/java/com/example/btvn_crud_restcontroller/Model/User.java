@@ -23,5 +23,8 @@ public class User {
      @Column(name = "user_age")
      private int userAge;
 
+     @Column(name = "email")
+     private String email;
+
 
 }

@@ -7,10 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRequest {
-    private String userRequest;
-    private int age;
-    private String emailRequest;
-
-
+public class UserWithParameterRequest {
+    private int userWithParamId;
 }
